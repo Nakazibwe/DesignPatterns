@@ -2,9 +2,9 @@
 /* eslint-disable no-console */
 // Singleton
 class Logger {
-  // 1. Restrict creation of objects from outside class.
   private static user:object = null;
 
+  // 1. Restrict creation of objects from outside class.
   private constructor(user:object) {
     Logger.user = user;
   }
@@ -33,3 +33,4 @@ Logger.login({ name: 'faith', password: 'r19968' });
 console.log(Logger.getLoggedInUser());
 Logger.login({ name: 'joshua', password: 'r19968' });
 console.log(Logger.getLoggedInUser());
+// Logger.login({username:"@ushindi", password:"x86991"});

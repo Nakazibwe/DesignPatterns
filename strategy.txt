@@ -1,0 +1,9 @@
+
+Step 1: Identify the aspects of the Context class that vary (across subtypes and / or objects).
+Step 2: Separate the aspects of the class that vary from those that don’t.
+Step 3: Encapsulate what varies / what is separates (Create a supertype, i.e. Interface or Abstract class). This serves as the (Strategy / Policy identifier).
+Step 4: Program to an interface (Abstraction), not implementation. Create concrete implementations of the Strategy whereby each extends an abstract class or implements an interface.
+Step 5: In the context class, create a variable of type as the supertype of the strategy (Let it’s type not be any of the concrete implementations of the strategy supertype). This variable can possibly be protected.
+Step 6: In the context class, Create a setter method for the variable created in step 5.
+Step 7: In the context class, Create a method to be used for executing the abstract method in the strategy
+Step 8: Test for whether the The Strategy Pattern is implemented successfully.

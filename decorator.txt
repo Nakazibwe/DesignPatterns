@@ -1,0 +1,6 @@
+1)Figure out methods that are common to the primary component and optional layers. Then create an interface containing these methods.
+2)Create a concrete component class to define the base behavior.
+3)Create a base decorator class that has a reference to the wrapped object. The reference should be declared with the interface type to enable it to link between the concrete classes as well as the decorators.
+4)Ensure all classes implement the base interface.
+5)Create concrete decorators by extending them from the base decorator.
+6)The client code must be responsible for creating decorators and composing them the way the client requires.
