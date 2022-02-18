@@ -1,0 +1,6 @@
+Step 1: Create an interface that declares common operations for both RealSubject and the Proxy
+Step 2: Create the real class and let it implemement the interface above, it also usaully contains some core business logic
+Step 3: Create the proxy class and let it implement the interface in step 1, 
+Step 4: The Proxy maintains a reference to an object of the original objects' class
+Step 5: Define proxy methods that will be performed before or after a request gets through to the original object, e.g checking access(before), logging access (after)
+step 5: Modify (from the proxy class) the methods in the interface to incoperate the proxy's private methods

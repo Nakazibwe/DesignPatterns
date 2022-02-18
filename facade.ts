@@ -86,6 +86,10 @@ class BlueRayPlayer implements Player {
   playBlueRay() {
     console.log('BlueRay player playing a movie');
   }
+
+  stopBlueRay() {
+    console.log('BlueRay player STOPPED playing a movie');
+  }
 }
 // Interface of the Amplifier.
 interface Amplifier{
@@ -132,6 +136,7 @@ class autoTheatreFacade {
     this.amplifier.turnOn();
     this.amplifier.setVolume('20');
     this.blueray.turnOnPlayer();
+    this.blueray.playBlueRay();
     this.popcornmaker.turnOnSnackMaker();
     this.popcornmaker.popStart();
   }
@@ -139,6 +144,7 @@ class autoTheatreFacade {
   public stopMovie() {
     this.lights.turnOffLights();
     this.tv.turnOff();
+    this.blueray.stopBlueRay();
     this.amplifier.turnOff();
     this.blueray.turnOffPlayer();
     this.popcornmaker.popStop();
@@ -150,9 +156,9 @@ const amplfy = new MovieAmplifier();
 const light = new MovieLights();
 const tv = new TV();
 const blueray = new BlueRayPlayer();
-const popcornmaker = new PopcornMaker();
+const popcorn = new PopcornMaker();
 
 // Creating access to subclass through the facade
-const autoTheatre = new autoTheatreFacade(blueray, popcornmaker, tv, light, amplfy);
+const autoTheatre = new autoTheatreFacade(blueray, popcorn, tv, light, amplfy);
 autoTheatre.startMovie();
 autoTheatre.stopMovie();
