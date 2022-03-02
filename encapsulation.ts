@@ -179,8 +179,103 @@ class Sale {
   List<SalesLineItem> salesLineItem
   = new ArrayList<SalesLineItem>();
   //...
-  public  addLineItem(ProductSpecification prodSpec,int quantity) {
+  public void addLineItem(ProductSpecification prodSpec,int quantity) {
       salesLineItem.add(new SalesLineItem(prodSpec, quantity);
-return this.salesLineItem;
+return salesLineItem;
   }
+}
+
+class Sale{
+  List <SalesLineItem>salesLineItem = new ArrayList<SalesLineItem>();
+  public addLineItem(prodSpec:ProductSpecification, quantity:number){
+    this.salesLineItem.add(new SalesLineItem(prodSpec,quantity));
+    return this.salesLineItem
+  }
+}
+
+export class Diary {
+  notes: Notes[];
+
+  addNote(title: string, content: string){
+    this.notes.push(Notes.create(title, content))
+  }
+}
+
+export const orderRouting = (orderService: OrderService) => {
+  const router = express.Router();
+  router.post("/order", (req: Request, res: Response, next: express.NextFunction) => {
+    orderService
+      .create({
+        productId: req.body.productId,
+        quantity: req.body.quantity,
+      })
+      .then(result => res.json(result))
+      .catch(err => next(err));
+  });
+
+  return router;
+};
+
+interface  Vehicle {
+  public move();
+}
+class Car implements Vehicle {
+  
+  public  move() {
+       console.log("Car is moving");
+  }
+}
+class Bike implements Vehicle {
+  
+  public move() {
+    console.log("Bike is moving");
+  }
+}
+
+class HighCohesive {
+  // functions related to read resource
+
+  // read the resource from disk
+  public readFromDisk( fileName:String):String {
+       return "reading data of " + fileName;
+  }
+
+  // read the resource from web
+  public readFromWeb(url:String):String {
+       return "reading data of " + url;
+  }
+
+  // read the resource from network
+  public readFromNetwork(networkAddress:String):String {
+       return "reading data of " + networkAddress;
+  }
+}
+
+public class Sale {
+  //...
+ public getTotal(){
+     double total = 0;
+     for (SalesLineItem s : salesLineItem) {
+         ProductSpecification prodspec
+         = s.getProductSpecification();
+         total += s.getQuantity()*prodspec.getPrice();
+     }
+     return total;
+  }
+}
+public class SalesLineItem {
+  //...
+  public double getSubTotal(){
+      return this.getQuantity()
+      productSpecification.getPrice();
+}
+}
+
+Public Configuration{
+  public GetFrameLength(){
+    // implementation
+  }
+  public GetNextFileName(){
+  }
+ // Remaining configuration methods
 }
